@@ -15,5 +15,6 @@ def log(z, g, p):
         i += 1
     return i
 
+
 if __name__ == "__main__":
     print(log(3, 3, 113))

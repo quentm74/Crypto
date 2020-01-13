@@ -19,19 +19,18 @@ def fermat(n, gap):
     print("ceil(sqrt(n)) = ", t)
     while i < gap:
         print("t = ", t)
-        S = mp.sqrt(t**2-n)
-        for s in [int(mp.floor(S)), int(mp.ceil(S))]:
-            s = int(s)
-            p, q = t + s, t - s
+        s = int(mp.sqrt(t**2-n))
+        s = int(s)
+        p, q = t + s, t - s
+        print("p, q = ", p, q)
+        if t**2 - s**2 == n:
+            print("t, s = ",t,s)
+            p, q = t+s, t-s
             print("p, q = ", p, q)
-            if t**2 - s**2 == n:
-                print("t, s = ",t,s)
-                p, q = t+s, t-s
-                print("p, q = ", p, q)
-                print("p*q = ", p*q, p*q == n)
-                return p,q
-            else:
-                print("couple non valide\n")
+            print("p*q = ", p*q, " = n : ", p*q == n)
+            return p,q
+        else:
+            print("couple non valide : p*q = " + str(p*q) +" != n\n")
         i += 1
         t = t + 1
     print("not found")
