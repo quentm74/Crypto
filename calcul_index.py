@@ -36,6 +36,7 @@ def log_discret(g, n):
                     Sys[i][p] = decomp[p]
                 else :
                     Sys[i][p] = 0
+    print("\n")
     print("Système linéaire")
     M = np.zeros((len(I), len(B)))
     Y = np.zeros((len(I), 1))
@@ -55,16 +56,17 @@ def log_discret(g, n):
     for p in B:
         log_str = "log_" + str(g) + "(" + str(p) + ")"
         X.append(log_str)
+    print("\n")
+
     print("Y = ")
     print(Y)
     print("M = ")
     print(M)
     print("transposée de X = ")
     print(X)
-    print("On cherche X tel que Y = M*X")
+    print("On cherche X tel que Y = M*X \n")
 
     print("Faire du pivot de Gauss")
-
 
 def contains(L1, L2):
     "test si L1 est inclus dans L2"
